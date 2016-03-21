@@ -1,7 +1,4 @@
-*AudioAgeEsimationDemo*
-An android project for age estimation by speech
-
-===============================
+**AudioAgeEsimationDemo**
 
 #Note
 
