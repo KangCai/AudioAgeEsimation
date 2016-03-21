@@ -44,9 +44,9 @@ public class BasicFeatureExtractionAE {
 		double[][] featureMatrix = new double[1][];
 		featureMatrix[0] = new BasicFeatureExtraction().extractFeatures(new File(targetFile));
 		//String arffStr = featureMatrixToArff(featureMatrix);
-		String arffStr = featureMatrixToLibsvm(featureMatrix);
+		String libsvmStr = featureMatrixToLibsvm(featureMatrix);
 		FileWriter fw = new FileWriter(new File(saveFileName));
-		fw.write(arffStr);
+		fw.write(libsvmStr);
 		fw.close();
 	}
 

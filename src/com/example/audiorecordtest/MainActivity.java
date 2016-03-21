@@ -87,10 +87,10 @@ public class MainActivity extends Activity {
             	//aef.generateOneFeature(dirPath + "/audio.wav", testFile);
 				BasicClassification bc = new BasicClassification();
 				String[] result = bc.libpredicting(testFile, modelFile);
-	    		if(result[0].equals("1.0"))
-	    			disptext.setText("成人, possiblity: " + result[1]);
+	    		if(result[0].equals("-1.0"))
+	    			disptext.setText("成人, possiblity: " + result[2]);
 	    		else
-	    			disptext.setText("小孩, possiblity: " + result[2]);
+	    			disptext.setText("小孩, possiblity: " + result[1]);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
