@@ -83,11 +83,13 @@ public class MainActivity extends Activity {
             
             try {
             	BasicFeatureExtractionAE aef = new BasicFeatureExtractionAE();
-				aef.generateOneFeature(AudioFileFunc.getWavFilePath(), testFile);
+				aef.generateOneLMFeature(AudioFileFunc.getWavFilePath(), testFile);
             	//aef.generateOneFeature(dirPath + "/audio.wav", testFile);
 				BasicClassification bc = new BasicClassification();
 				String[] result = bc.libpredicting(testFile, modelFile);
-	    		if(result[0].equals("-1.0"))
+				if(Double.parseDouble(result[1]) > 0.4 && Double.parseDouble(result[1]) < 0.6)
+					disptext.setText("不太确定, possiblity :" + result[1]);
+				else if(result[0].equals("-1.0"))
 	    			disptext.setText("成人, possiblity: " + result[2]);
 	    		else
 	    			disptext.setText("小孩, possiblity: " + result[1]);
